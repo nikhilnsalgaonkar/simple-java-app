@@ -4,6 +4,11 @@ pipeline {
         gradle 'Gradle8.12.1' // Configure Gradle in Jenkins Tools
         jdk 'JDK17'
     }
+
+    environment {
+        SONARQUBE_SERVER = 'sonarqube-server'
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -14,6 +19,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'gradle clean build'
+            }
+        }
+
+        stage('SonarQube Scan') {
+            steps {
+                withSonarQubeEnv('sonarqube-server') {
+                    sh 'gradle sonarqube'
+                }
             }
         }
 
