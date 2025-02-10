@@ -3,3 +3,42 @@
 
 # Ignore Gradle build output directory
 build
+
+# Ignore VSCode specific files
+.vscode
+
+# IDE specific files (IntelliJ IDEA, Eclipse, VSCode, etc.)
+.idea/
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# SonarQube scanner files
+.sonarqube/
+
+# Java-specific files
+*.class
+*.jar
+*.war
+*.ear
+
+# Test results
+/test-results/
+/out/
+
+# Temporary files created by build tools
+*.lock
+
+# Git-specific
+*.orig
