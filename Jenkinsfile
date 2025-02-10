@@ -36,7 +36,19 @@ pipeline {
             }
         }
 
+        stage('Cleanup') {
+            steps {
+                cleanWs()
+            }
+        }
 
+
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
     }
 
 }
