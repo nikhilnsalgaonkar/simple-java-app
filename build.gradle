@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'java'
+    id 'org.sonarqube' version '4.3.0.3225'
 }
 
 jar {
@@ -16,6 +17,14 @@ jar {
         attributes(
             'Main-Class': 'org.example.HelloWorld'
         )
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "simple-java-app"
+        property "sonar.host.url", "http://192.168.56.11:9001/"
+        property "sonar.login", "squ_26eaf2a23016b96430e3b57677470964299c943a"
     }
 }
 
