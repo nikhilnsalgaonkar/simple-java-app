@@ -9,6 +9,10 @@ pipeline {
         SONARQUBE_SERVER = 'sonarqube-server'
     }
 
+    triggers {
+        cron('H 10 * * *') // Schedule daily at 10 AM
+    }
+
     stages {
         stage('Checkout') {
             steps {
